@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Core.Models
+namespace Common.Models
 {
     [Table("CRMProgram")]
     public class CRMProgram : TrackableEntry
@@ -23,7 +23,7 @@ namespace Core.Models
         public virtual Confirmation Confirmation { get; set; }
         public virtual Company Company { get; set; }
         public virtual Employee Employee { get; set; }
-        public virtual ICollection<Job> Tasks { get; set; }
+        public virtual ICollection<Job> Jobs { get; set; }
 
         #endregion
     }

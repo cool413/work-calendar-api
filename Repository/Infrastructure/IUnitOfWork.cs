@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Core.Models;
+using Common.Models;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interfaces;
 

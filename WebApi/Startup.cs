@@ -1,4 +1,5 @@
-using Core.Models;
+using System;
+using Common.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository;
-using Repository.Implement;
 using Repository.Infrastructure;
 using Repository.Interfaces;
+using AutoMapper;
+using Repository.Implements;
+using Service.Implements;
+using Service.Interfaces;
 
 namespace WebApi
 {
@@ -24,7 +28,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddScoped<IJobService, JobService>();
+            services.AddScoped<IWorkCalendarService, WorkCalendarService>();
             services.AddScoped<IGenericRepository.IGenericRepository<Job>, GenericRepository<Job>>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<DbContext, WorkCalendarContext>();
@@ -34,8 +38,7 @@ namespace WebApi
                     options => options.MigrationsAssembly("WebApi")));
             
             
-            
-            
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
         }
 

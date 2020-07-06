@@ -1,7 +1,7 @@
 ﻿using System;
-using Core.Interfaces;
+using Common.Interfaces;
 
-namespace Core.Models
+namespace Common.Models
 {
     public abstract class TrackableEntry : ITrack
     {

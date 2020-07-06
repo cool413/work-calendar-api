@@ -5,14 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Core\Core.csproj" />
+      <ProjectReference Include="..\Common\Common.csproj" />
       <ProjectReference Include="..\Repository\Repository.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Implement" />
-      <Folder Include="Infrastructure" />
-      <Folder Include="Interface" />
+      <PackageReference Include="AutoMapper" Version="10.0.0" />
     </ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Core.Models
+namespace Common.Models
 {
-    [Table("Company")]
     public class Company : TrackableEntry
     {
         public int Id { get; set; }

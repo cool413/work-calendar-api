@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Core.Interfaces;
-using Core.Models;
+using Common.Interfaces;
+using Common.Models;
 using Microsoft.EntityFrameworkCore;
 using Repository.Configurations;
+using Repository.Extensions;
 using Repository.Interfaces;
 
 namespace Repository
@@ -42,6 +43,7 @@ namespace Repository
             modelBuilder.ApplyConfiguration(new CRMProgramConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new TaskConfiguration());
+            modelBuilder.Seed();
         }
 
         public override int SaveChanges()

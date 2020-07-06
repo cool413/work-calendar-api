@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Core.Models
+namespace Common.Models
 {
-    [Table("Employee")]
     public class Employee : TrackableEntry
     {
         public string Id { get; set; }
@@ -13,7 +12,7 @@ namespace Core.Models
         #region Navigation Properties
 
         public virtual ICollection<CRMProgram> CRMPrograms { get; set; }
-        public virtual ICollection<Job> Tasks { get; set; }
+        public virtual ICollection<Job> Jobs { get; set; }
 
         #endregion
     }

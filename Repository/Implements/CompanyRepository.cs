@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Repository.Implement
+namespace Repository.Implements
 {
     public class CompanyRepository<TEntity> : GenericRepository<TEntity> where TEntity : class
     {

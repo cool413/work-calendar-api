@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interfaces;
 
-namespace Repository.Implement
+namespace Repository.Implements
 {
     public class GenericRepository<TEntity> : IGenericRepository.IGenericRepository<TEntity> where TEntity : class
     {

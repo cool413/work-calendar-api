@@ -1,4 +1,4 @@
-﻿using Core.Models;
+﻿using Common.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -38,12 +38,12 @@ namespace Repository.Configurations
                 .IsRequired();
 
             builder.HasOne(t => t.Confirmation)
-                .WithMany(c => c.Tasks)
+                .WithMany(c => c.Jobs)
                 .HasForeignKey(t => t.ConfirmationCode)
                 .IsRequired();
 
             builder.HasOne(t => t.CRMProgram)
-                .WithMany(c => c.Tasks)
+                .WithMany(c => c.Jobs)
                 .HasForeignKey(t => new {t.CRMProgramCode, t.ConfirmationCode})
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired();

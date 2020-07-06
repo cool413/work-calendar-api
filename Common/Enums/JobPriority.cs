@@ -1,4 +1,4 @@
-﻿namespace Core.Enums
+﻿namespace Common.Enums
 {
     public enum JobPriority
     {

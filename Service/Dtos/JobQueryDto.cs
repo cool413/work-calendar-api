@@ -1,9 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Core.Models
+﻿namespace Service.Dtos
 {
-    [Table("Job")]
-    public class Job : TrackableEntry
+    public class JobQueryDto
     {
         public int Id { get; set; }
         public string Tag { get; set; }
@@ -12,21 +9,8 @@ namespace Core.Models
         public decimal Hours { get; set; }
         public string StarDate { get; set; }
         public string EndDate { get; set; }
-
-        #region Foreign key
-
         public string ConfirmationCode { get; set; }
         public string CRMProgramCode { get; set; }
         public string EmployeeId { get; set; }
-
-        #endregion
-
-        #region Navigation Properties
-
-        public virtual Confirmation Confirmation { get; set; }
-        public virtual CRMProgram CRMProgram { get; set; }
-        public virtual Employee Employee { get; set; }
-
-        #endregion
     }
 }
